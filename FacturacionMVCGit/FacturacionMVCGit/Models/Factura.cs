@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
 namespace FacturacionMVCGit.Models
 {
     public class Factura
@@ -12,11 +11,13 @@ namespace FacturacionMVCGit.Models
         public int IdProveedor { get; set; }
         public string Nit { get; set; }
         public DateTime Fecha { get; set; }
-
         public decimal CalcularTotal(decimal subtotal)
         {
-            return subtotal -= subtotal * (decimal)0.13;
+            
+            subtotal -= subtotal * (decimal)0.13;
+            // agregamos el impuesto
+            subtotal -= subtotal * (decimal)0.10;
+            return subtotal;
         }
-
     }
 }
