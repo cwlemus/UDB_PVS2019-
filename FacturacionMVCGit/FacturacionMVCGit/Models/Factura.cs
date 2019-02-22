@@ -7,5 +7,6 @@ namespace FacturacionMVCGit.Models
 {
     public class Factura
     {
+        public string Nit { get; set; }
     }
 }
